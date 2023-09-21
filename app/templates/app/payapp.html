@@ -1,0 +1,57 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %} Customer Registration
+{% endblock title %}
+
+{% block main-content %} 
+
+<div class="container">
+    <div class="row my-3">
+        <div class="col-sm-6 offset-sm-3">
+            <h3 class="text-center">Pay In App</h3><hr>
+
+            <form action="" method="post" enctype="multipart/form-data" novalidate class="shadow p-5">
+                {% csrf_token %}
+               <div class="mb-3">
+                <label for="" class="form-label">Reciever Name</label>
+                <input type="text" Required name="name" class="form-control">
+               </div>
+               <div class="mb-3">
+                <label for="" class="form-label">Contact</label>
+                <input type="number" Required name="contact" class="form-control">
+               </div>
+               <div class="mb-3">
+                <label for="" class="form-label">Address</label>
+                <input type="text" Required name="address" class="form-control">
+               </div>
+               <div class="mb-3">
+                <label for="" class="form-label">State</label>
+                <input type="text" Required name="state" class="form-control">
+               <!-- <select name="state" id="state">
+                    {% for value, label in choices %}
+                    <option value="{{value}}">{{label}}</option>
+                    {% endfor %}
+                </select>  -->            
+            </div>
+               <div class="mb-3">
+                <label for="" class="form-label">Make your Order Payment of <span class="fw-bold text-primary">N.{{totalamount}}</span> to : <br> <span class="fw-bold">Acct No:</span> 0021216563 <br> 
+                    <span class="fw-bold">Bank Name:</span> Access Bank <br><span class="fw-bold">Acct Name:</span> Ogadio Sandra <br>and upload Payment Receipt below</label>
+                <input type="file" Required name="image" class="form-control">
+               </div>
+               <small class="text-primary text-center"><span class="fw-bold text-primary lh-0">N/B</span> your payment will be proccessed and confirmed in less than 12hrs and goods be delivered
+                to your provided location within 5 working days, do well to upload a clear screen shot of your payment Receipt
+                and your proper address and contact<br></small>
+               <input type="submit" class="btn btn-button btn-primary" name="submit">
+                    
+                {% for message in messages %}
+               <p class="alert alert-danger my-3 text-danger" >{{message}}</p>
+                {% endfor %}
+                
+            </form>
+          
+        </div>
+    </div>
+</div>
+
+{% endblock main-content %}

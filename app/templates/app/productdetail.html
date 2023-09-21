@@ -1,0 +1,48 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %} Product Detail
+{% endblock title %}
+
+{% block main-content %} 
+<div class="container ">
+    <div class="row flex justify-content-between">
+        <div class="img2 col-lg-5 mt-5">
+            <img src="{{product.product_image.url}}" class="image col-xs-6
+            col-sm-12 col-lg-12 mt-3 text-sm-center" width="    auto" height="400px" alt="">
+        </div>
+
+        <div class="productdetail col-lg-5">
+            <h1 style="font-family: Goeorgia; font-size: 50px; "> {{ product.title }}</h1>
+            <h5>N.{{product.discounted_price}}/-</h5> 
+                <small class="fw-light text-decoration-line-through text-muted fs-5"><del>
+                    N.{{product.selling_price}}/-
+                </small></del>
+                <br><br>
+
+                <h4>Product Features</h4>
+                <li>{{product.description}}</li> <br><br>
+
+            
+                
+                 {% if in_cart %}
+                        <button type="" pid={{product.id}} class="in-cart btn btn-dark shadow px-sm-5 px-2 py-2" id="add-to-cart-button">Added to Cart</button>
+                    {% else %}
+                        <form action="/add-to-cart" class="d-inline">
+                        <input type="hidden" name="prod_id" value={{product.id}}>
+                        
+                        <button type="submit" pid={{product.id}} class="out-cart btn btn-primary shadow px-sm-5 px-2 py-2">{{cart.quantity}}Add to Cart</button>
+                    {% endif %}
+                       
+                    </form>
+                        <a href="{% url 'showcart' %}" class="btn btn-warning shadow px-sm-5 px-2 py-2 ns-4"> Buy Now</a>
+                   
+        </div>
+        
+        </div>
+
+       
+    </div>
+</div>
+
+{% endblock main-content %}

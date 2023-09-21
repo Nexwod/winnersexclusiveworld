@@ -1,0 +1,63 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %} About
+{% endblock title %}
+
+
+
+{% block main-content %} 
+
+<!--banner slider -->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'app/img/banner/b1.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/img/banner/b2.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/img/banner/b3.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+     
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<!--banner slider -->
+<br><br>
+<div>
+    <section class="contact-area" id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="col-md ">
+              <h2 class="text-center" >Contact Info</h2>
+              <ul class="list-group-flush m-0 p-0">
+              <li class="list-group-item text-capitalize">
+                <span class="fw-bold flush">Main Location: </span> No 2 Awwal Ibrahim Road,
+                Hayin Gwarri. Off Okada Bosso,
+                Minna, Niger State
+              </li>
+              <li class="list-group-item ">
+                <span class="fw-bold flush">Email Address: </span>ogahsanda@gmail.com
+              </li>
+              <li class="list-group-item text-capitalize">
+                <span class="fw-bold flush">Customer Service Line: </span>+234 803 088 2921
+              </li>
+              <li class="list-group-item text-capitalize">
+                <span class="fw-bold flush">Delivery line: </span>0805 393 1716      </li>
+            </ul>
+            </div>
+          </div>
+        </div>  
+        </section>
+
+</div>
+{% endblock main-content %}

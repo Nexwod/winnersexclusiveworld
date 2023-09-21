@@ -1,0 +1,8 @@
+.project-button{
+    border: none;
+    background-color: white;
+    margin: 1rem;
+}
+.project-button .active{
+    color : rgb(23, 36, 220);
+}
